@@ -1,0 +1,13 @@
+data/
+*.json
+*.html
+*.xlsx
+*.csv
+raw_*/
+structured_*/
+__pycache__/
+*.pyc
+.venv/
+
+.data
+data

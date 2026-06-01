@@ -1,0 +1,22 @@
+python report.py --input data/public/structured_trial_combined/
+
+based on ID: python scrape.py --source public --court-id 49978 --max-rulings 2000 --resume --verbose
+
+
+REPORT:
+python report.py --input data/public/structured/
+python report.py --input data/public/structured_labor/
+python report.py --input data/public/structured_jinayet/
+
+
+
+# Make a combined folder JUST for analysis (not deletion)
+New-Item -ItemType Directory -Path "data/public/structured_trial_combined" -Force
+Copy-Item "data/public/structured_jinayet/*.json" "data/public/structured_trial_combined/"
+Copy-Item "data/public/structured_labor/*.json" "data/public/structured_trial_combined/"
+
+# Run the topic-court analysis on the combined trial-court corpus
+
+python topic_court_analysis.py --input data/public/structured_trial_combined/ --xlsx trial_courts_analysis.xlsx
+
+python report.py --input data/public/structured_trial_combined/
