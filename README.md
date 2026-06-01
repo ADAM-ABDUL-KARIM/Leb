@@ -129,9 +129,7 @@ data/
 
 ## Ethics rules
 
-1. **PU database**:  has cleared this. Verify she's aware of
-   the volume you intend to scrape. If she said "a few dozen for testing,"
-   don't scrape 10,000 without going back.
+
 
 2. **Public sites**: check `robots.txt` before scraping. Use `User-Agent`
    that identifies you. Keep request delay at 2+ seconds.
