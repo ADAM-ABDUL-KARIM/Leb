@@ -1,0 +1,38 @@
+Articles:
+5120
+
+Rulings:
+3026  → 1605 (محكمة الجنايات) - Zeros articles: 52
+          → مجالس العمل التحكيمية 1421 - Zeros articles: 403
+
+
+محكمة الجنايات  (total 1605)
+   >=1 article:   1553
+   >=1 decree:    15
+   >=1 reference: 1553
+   zero:          52
+
+
+مجالس العمل التحكيمية  (total 1421)
+   >=1 article:   1007
+   >=1 decree:    197
+   >=1 reference: 1018
+   zero:          403
+
+
+Total Zero: 455 
+
+ 5,120 articles across the 15 laws that account for ~98.5% of all citations in our trial-court rulings.
+
+
+ cosine similarity
+rouge-l
+blue-score 
+
+
+They want mT5 only on All jinayat and all articles with these performance metrics:
+cosine similarity
+rouge-l
+blue-score 
+
+ i was told not to use مجالس العمل التحكيمية becuase they are trivial. but i can make another run including them to see the difference

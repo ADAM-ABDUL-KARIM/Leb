@@ -20,3 +20,14 @@ Copy-Item "data/public/structured_labor/*.json" "data/public/structured_trial_co
 python topic_court_analysis.py --input data/public/structured_trial_combined/ --xlsx trial_courts_analysis.xlsx
 
 python report.py --input data/public/structured_trial_combined/
+
+
+
+
+python consolidate.py --rulings data/public/structured_combined --articles data/articles/structured --outdir out --xlsx
+
+
+
+python consolidate.py --rulings data/public/structured_jinayet --articles data/articles/structured --outdir out --xlsx
+
+للمواد المادة مواد مادتين المادتين المواد رسوم
