@@ -23,7 +23,7 @@ lebanese_legal_scraper/
 ├── build_dataset.py        # post-processing into training triples
 ├── sources/
 │   ├── public.py           # public Lebanese sites — TODOs to fill in
-│   └── pu.py               # PU library database — TODOs to fill in
+│                 
 └── README.md
 ```
 
@@ -90,20 +90,8 @@ python scrape.py --source public --max-rulings 2000 --resume
 If the connection drops, just rerun with `--resume`. Already-scraped rulings
 are skipped.
 
-### Step 6 — Repeat for PU database
 
-```bash
-export PU_USERNAME="..."
-export PU_PASSWORD="..."
-
-python diagnose.py --url <PU_ruling_url>
-# Fill in sources/pu.py based on diagnostic output
-
-python scrape.py --source pu --max-rulings 5 --verbose
-# Inspect, iterate, scale
-```
-
-### Step 7 — Build the training dataset
+### Step 6 — Build the training dataset
 
 ```bash
 python build_dataset.py --input ./data --output ./training_data
@@ -121,38 +109,3 @@ data/
 │   ├── raw/                # raw HTML files
 │   ├── structured/         # parsed JSON files
 │   └── articles/           # if articles are scraped separately
-└── pu/
-    ├── raw/
-    ├── structured/
-    └── articles/
-```
-
-## Ethics rules
-
-1. **PU database**:  has cleared this. Verify she's aware of
-   the volume you intend to scrape. If she said "a few dozen for testing,"
-   don't scrape 10,000 without going back.
-
-2. **Public sites**: check `robots.txt` before scraping. Use `User-Agent`
-   that identifies you. Keep request delay at 2+ seconds.
-
-3. **Don't parallelize**: one scraper at a time per source. Running multiple
-   instances looks like a DoS attack to small servers.
-
-## What's NOT included (handle later)
-
-- Judge name disambiguation (same judge, different spellings)
-- Article text deduplication (same article in different citation formats)
-- Cross-referencing rulings ↔ article texts
-- Quality scoring / flagging suspect extractions
-- Translation/normalization of names
-
-These come after you have a working scrape with real data.
-
-## Questions to confirm with 
-
-Before scraping at scale:
-1. Which exact databases did she clear for scraping?
-2. Volume limit — is 100 rulings ok? 1000? 10000?
-3. Should articles be scraped separately, or only as cited in rulings?
-4. Does she want a specific year range or court coverage target?
