@@ -5,8 +5,7 @@ Scrapes Lebanese court rulings and legal articles for the
 
 ## What this gives you
 
-A **working architecture** for scraping two sources (public sites + PU library
-database), with Arabic-aware extraction, French detection, retry/resume logic,
+A **working architecture** for scraping two sources (public sites database), with Arabic-aware extraction, French detection, retry/resume logic,
 and dual output (raw HTML archive + structured JSON).
 
 The architecture works end-to-end RIGHT NOW for any source — but selectors and
